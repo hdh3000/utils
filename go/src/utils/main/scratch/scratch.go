@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	input := []string{"foo","bar","baz", "bing"}
-	for i := len(input)-1; i > 0; i-- {
+	input := []string{"foo", "bar", "baz", "bing"}
+	for i := len(input) - 1; i > 0; i-- {
 		fmt.Println(input[:i], input[i])
 	}
 
@@ -12,4 +12,3 @@ func main() {
 		fmt.Println(input[i:])
 	}
 }
-

@@ -24,27 +24,26 @@ var DefaultWordEquivalentChars = map[rune]bool{
 
 // DefaultExcludedChars is the set of characters that will be excluded
 // when scanning input. By default it excludes all unicode "space" characters.
-var DefaultExcludedChars = map[rune]bool {
-	' ':true,
-	'\t':true,
-	'\n':true,
-	'\v':true,
-	'\f':true,
-	'\r':true,
-	'\u0085':true,
-	'\u00A0':true,
-	'\u1680':true,
-	'\u2028':true,
-	'\u2029':true,
-	'\u202f':true,
-	'\u205f':true,
-	'\u3000':true,
+var DefaultExcludedChars = map[rune]bool{
+	' ':      true,
+	'\t':     true,
+	'\n':     true,
+	'\v':     true,
+	'\f':     true,
+	'\r':     true,
+	'\u0085': true,
+	'\u00A0': true,
+	'\u1680': true,
+	'\u2028': true,
+	'\u2029': true,
+	'\u202f': true,
+	'\u205f': true,
+	'\u3000': true,
 }
-
 
 // NewWordScanner confirms to the bufio.Scanner type.
 // It is for use when building the model from text.
-func NewWordScanner(wordEq, excluded  map[rune]bool,) func(data []byte, atEOF bool) (advance int, token []byte, err error) {
+func NewWordScanner(wordEq, excluded map[rune]bool) func(data []byte, atEOF bool) (advance int, token []byte, err error) {
 	return func(data []byte, atEOF bool) (advance int, token []byte, err error) {
 		start := 0
 		for width := 0; start < len(data); start += width {

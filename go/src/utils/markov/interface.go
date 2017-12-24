@@ -7,19 +7,26 @@ import (
 )
 
 // ModelBuilder builds a markov model
+// Once closed, none of its methods can be called.
 type ModelBuilder interface {
 	// Add adds new choices to the model
-	Add(tokens []string)
+	Add(tokens []string) error
 	// Get any errors that have occurred while adding
 	Errs() []error
 	// Close the builder
 	Close() []error
 }
 
-// ModelExecr executes a markov model
+// ModelExecer executes a markov model
 type ModelExecer interface {
 	// Get choices gives you your next Choice given your current prefixes
 	GetChoices(tokens []string) (Choices, error)
+}
+
+// a ModelStore stores the learned parameters
+type ModelStore interface {
+	Get(key string) (map[string]int, error)
+	Set(key string, counts map[string]int) error
 }
 
 type Chooser interface {
@@ -30,18 +37,17 @@ type Chooser interface {
 // Choices represents the next possible state of the model.
 type Choices []Choice
 
-type Choice struct{
+type Choice struct {
 	// The chance that this outcome would happen
 	Prob float64
 	// The outcome that the probability describes
 	Outcome string
 }
 
-
 // NewRandomChooser returns a chooser that chooses the next token at pseudo-random
 // weighted by the probability of the token being next
 func NewRandomChooser() Chooser {
-	return &randomChooser{rand : rand.New(rand.NewSource(time.Now().Unix()))}
+	return &randomChooser{rand: rand.New(rand.NewSource(time.Now().Unix()))}
 }
 
 type randomChooser struct {
@@ -64,7 +70,3 @@ func (m *randomChooser) Choose(c Choices) string {
 
 	return ""
 }
-
-
-
-

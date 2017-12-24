@@ -9,7 +9,6 @@ import (
 	"os"
 	"strings"
 	"utils/markov"
-	"utils/markov/persistent"
 )
 
 var fInit = flag.Bool("init", false, "do you want to re-init your model?")
@@ -23,13 +22,12 @@ var fLength = flag.Int("l", 240, "how long do you want the output to be?")
 func main() {
 	flag.Parse()
 
-	store, err := persistent.NewFSStore(*fDir)
+	store, err := markov.NewFSStore(*fDir)
 	if err != nil {
 		log.Fatalf("%s", err)
 	}
 
-	model := persistent.NewModel(store, 10)
-
+	model := markov.NewModelBuilder(store, 20)
 	if *fInit {
 		if err := os.RemoveAll(*fDir); err != nil {
 			log.Fatalf("%s", err)
@@ -56,15 +54,18 @@ func main() {
 				continue
 			}
 
-			model.Add(tokens)
+			if err := model.Add(tokens); err != nil {
+				log.Fatalf("%s", err)
+			}
 
 			tokens = tokens[1:]
 			tokens = append(tokens, text)
 
+			if s.Err() != nil {
+				log.Fatalf("%s", err)
+			}
 		}
-		if s.Err() != nil {
-			log.Fatalf("%s", err)
-		}
+		model.Close()
 
 		fmt.Println("Model created at %s", *fDir)
 		return
@@ -72,10 +73,11 @@ func main() {
 
 	chooser := markov.NewRandomChooser()
 
+	execer := markov.NewModelExecer(store)
 	for r := 0; r < *fCount; r++ {
 		previous := strings.Split(*fStart, " ")
 		for i := len(previous); i < *fDepth; i++ {
-			choices, err := model.GetChoices(previous)
+			choices, err := execer.GetChoices(previous)
 			if err != nil {
 				log.Fatalf("%s", err)
 			}
@@ -85,7 +87,7 @@ func main() {
 
 		buf := bytes.Buffer{}
 		for i := 0; i < *fLength; i++ {
-			choices, err := model.GetChoices(previous)
+			choices, err := execer.GetChoices(previous)
 			if err != nil {
 				log.Fatalf("%s", err)
 			}

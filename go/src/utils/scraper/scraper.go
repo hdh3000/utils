@@ -1,12 +1,12 @@
 package scraper
 
 import (
-	"github.com/PuerkitoBio/goquery"
 	"fmt"
+	"github.com/PuerkitoBio/goquery"
 )
 
 // Scraper takes urls, and selectors and returns information.
-type Scraper interface{
+type Scraper interface {
 	// GetContents returns the concatenated contents of all matching nodes
 	GetContents(string, string) (string, error)
 }

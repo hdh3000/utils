@@ -10,11 +10,9 @@ import (
 	"net/http"
 )
 
-
 var fPort = flag.Int("p", 8080, "the port this server will listen on")
 var fStatus = flag.Int("sc", 200, "the status code to return to every request")
-var fVerbose = flag.Bool("v",false,"verbose prints the entire request out.")
-
+var fVerbose = flag.Bool("v", false, "verbose prints the entire request out.")
 
 func main() {
 	flag.Parse()
@@ -51,7 +49,6 @@ func main() {
 		return
 	}
 }
-
 
 func printer(m map[string][]string, title string) {
 	fmt.Println(title)

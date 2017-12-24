@@ -2,11 +2,10 @@ package main
 
 import (
 	"flag"
-	"utils/scraper"
 	"log"
 	"os"
+	"utils/scraper"
 )
-
 
 var fUrl = flag.String("url", "", "The url to scrape")
 var fSelector = flag.String("s", "", "The default css selector to grab text from")
