@@ -1,0 +1,17 @@
+{
+ "github.com/PuerkitoBio/goquery": {
+  "git-remote": "https://github.com/PuerkitoBio/goquery",
+  "current-version-git-hash": "bc4e06eb0792d1a14661d19dd7822163c25bb6bd",
+  "content-hash": "f9f8037adde736d5b29f6d371eb68ba965b407f1"
+ },
+ "github.com/andybalholm/cascadia": {
+  "git-remote": "https://github.com/andybalholm/cascadia",
+  "current-version-git-hash": "349dd0209470eabd9514242c688c403c0926d266",
+  "content-hash": "419d352872a495244ade962c6ec3adc46800d80d"
+ },
+ "golang.org/x/net": {
+  "git-remote": "https://go.googlesource.com/net",
+  "current-version-git-hash": "d866cfc389cec985d6fda2859936a575a55a3ab6",
+  "content-hash": "68e6229b6135a23fc92d187cce06bde91a15eb22"
+ }
+}
