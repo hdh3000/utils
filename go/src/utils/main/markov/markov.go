@@ -1,10 +1,10 @@
 package main
 
 import (
-	"bufio"
-	"bytes"
 	"flag"
 	"fmt"
+	"fs/gcloud"
+	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -13,7 +13,7 @@ import (
 
 var fInit = flag.Bool("init", false, "do you want to re-init your model?")
 var fDir = flag.String("m", "./markov-model", "where to store the model?")
-var fDepth = flag.Int("d", 5, "how many tokens do you want the next token based on?")
+var fDepth = flag.Int("d", 50, "how many tokens do you want the next token based on?")
 var fCorpus = flag.String("f", "", "the text file you want to work with")
 var fCount = flag.Int("reps", 10, "number of passages to generate")
 var fStart = flag.String("s", "I have", "what do you want to seed the text with?")
@@ -22,87 +22,46 @@ var fLength = flag.Int("l", 240, "how long do you want the output to be?")
 func main() {
 	flag.Parse()
 
-	store, err := markov.NewFSStore(*fDir)
+	store, err := markov.NewDataStore(gcloud.Env().ProjectId(), "testing")
 	if err != nil {
-		log.Fatalf("%s", err)
+		log.Fatalf("err opening ds\n%s", err)
+	}
+	model := markov.NewModelBuilder(store, 3)
+
+	corpus, err := os.Open(*fCorpus)
+	if err != nil {
+		log.Fatalf("err opening corpus\n%s", err)
 	}
 
-	model := markov.NewModelBuilder(store, 20)
-	if *fInit {
-		if err := os.RemoveAll(*fDir); err != nil {
-			log.Fatalf("%s", err)
-		}
+	if err := markov.Ingest(model, corpus, markov.NewWordScanner(markov.DefaultWordEquivalentChars, markov.DefaultExcludedChars), *fDepth); err != nil {
+		log.Fatalf("err ingesting corpus\n%s", err)
+	}
 
-		if err := os.MkdirAll(*fDir, 0740); err != nil {
-			log.Fatalf("%s", err)
-		}
-
-		corpus, err := os.Open(*fCorpus)
-		if err != nil {
-			log.Fatalf("err opening corpus\n%s", err)
-		}
-
-		s := bufio.NewScanner(corpus)
-		s.Split(markov.NewWordScanner(markov.DefaultWordEquivalentChars, markov.DefaultExcludedChars))
-
-		var tokens []string
-		for s.Scan() {
-			text := strings.ToLower(s.Text())
-
-			if len(tokens) < *fDepth+1 {
-				tokens = append(tokens, text)
-				continue
-			}
-
-			if err := model.Add(tokens); err != nil {
-				log.Fatalf("%s", err)
-			}
-
-			tokens = tokens[1:]
-			tokens = append(tokens, text)
-
-			if s.Err() != nil {
-				log.Fatalf("%s", err)
-			}
-		}
-		model.Close()
-
-		fmt.Println("Model created at %s", *fDir)
-		return
+	if errs := model.Close(); errs != nil {
+		log.Fatalf("err ingesting corpus\n%v", errs)
 	}
 
 	chooser := markov.NewRandomChooser()
-
 	execer := markov.NewModelExecer(store)
 	for r := 0; r < *fCount; r++ {
-		previous := strings.Split(*fStart, " ")
-		for i := len(previous); i < *fDepth; i++ {
-			choices, err := execer.GetChoices(previous)
-			if err != nil {
-				log.Fatalf("%s", err)
-			}
-			next := chooser.Choose(choices)
-			previous = append(previous, next)
+		b, err := markov.Exec(execer, chooser, strings.Split(*fStart, " "), *fLength, printFunc, *fLength)
+		if err != nil {
+			log.Fatalf("%s", err)
 		}
-
-		buf := bytes.Buffer{}
-		for i := 0; i < *fLength; i++ {
-			choices, err := execer.GetChoices(previous)
-			if err != nil {
-				log.Fatalf("%s", err)
-			}
-			next := chooser.Choose(choices)
-			previous = append(previous[1:], next)
-			buf.WriteString(next)
-
-			buf.WriteString(" ")
-			if i%15 == 0 && i != 0 {
-				buf.WriteString("\n")
-			}
-		}
-		fmt.Println(buf.String())
-		fmt.Println("")
-
+		out, _ := ioutil.ReadAll(b)
+		fmt.Println(string(out))
 	}
 
+}
+
+func printFunc(token string, pos int) string {
+	if len(token) == 0 {
+		return token
+	}
+	switch token[0] {
+	case '"', '\'', '.', ';', ',', ':':
+		return token
+	default:
+		return " " + token
+	}
 }

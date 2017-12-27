@@ -6,15 +6,14 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
-	"sync"
 )
 
+// fs is the FileSystemStore.
 type fs struct {
 	dir string
-	locks map[string]*sync.Mutex
-	*sync.Mutex
 }
 
+// new FSStore creates a store that uses your filesystem to create a persistent model.
 func NewFSStore(dir string) (ModelStore, error) {
 	d, err := os.Stat(dir)
 	if err != nil && !os.IsNotExist(err) {
@@ -30,26 +29,11 @@ func NewFSStore(dir string) (ModelStore, error) {
 		return nil, fmt.Errorf("%s exists and is not a dir", dir)
 	}
 
-	return &fs{ dir, make(map[string]*sync.Mutex), &sync.Mutex{}}, nil
+	return &fs{dir}, nil
 
 }
 
 func (fs *fs) Set(key string, counts map[string]int) error {
-	var lock *sync.Mutex
-	fs.Lock()
-	if _, ok := fs.locks[key]; !ok {
-		fs.locks[key] = &sync.Mutex{}
-	}
-	lock = fs.locks[key]
-	fs.Unlock()
-
-	lock.Lock()
-	defer func() {
-		lock.Unlock()
-	}()
-
-
-
 	f, err := os.Create(path.Join(fs.dir, key))
 	if err != nil {
 		return fmt.Errorf("failed to create file...\n%s", err)
@@ -69,20 +53,6 @@ func (fs *fs) Set(key string, counts map[string]int) error {
 }
 
 func (fs *fs) Get(key string) (map[string]int, error) {
-	var lock *sync.Mutex
-
-	fs.Lock()
-	if _, ok := fs.locks[key]; !ok {
-		fs.locks[key] = &sync.Mutex{}
-	}
-	lock = fs.locks[key]
-	fs.Unlock()
-
-	lock.Lock()
-	defer func() {
-		lock.Unlock()
-	}()
-
 	f, err := os.Open(path.Join(fs.dir, key))
 	if err != nil && !os.IsNotExist(err) {
 		return nil, fmt.Errorf("failed to open file...\n%s", err)
