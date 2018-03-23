@@ -7,24 +7,22 @@ import (
 func TestNewPlane(t *testing.T) {
 	pl := NewPlane(3, 3)
 
-	pl.GetCell(1, 1).attraction = 1
+	pl.GetCell(1, 1).SetAttraction(1)
 
-	po := NewPoint(pl)
+	pl.AddPoint(NewPoint(), 0, 0)
+	pl.AddPoint(NewPoint(), 2, 2)
 
-	po.SetLocation(0, 0)
-	po.SetLocation(2, 2)
-
-	if len(pl.cells[0][0].points) != 1 {
+	if pl.GetCell(0, 0).NumPoints() != 1 {
 		t.Errorf("failed to set point in location 0,0")
 	}
 
-	pl.Converge()
+	pl.Converge(1)
 
-	if len(pl.cells[0][0].points) == 1 {
+	if pl.GetCell(0, 0).NumPoints() == 1 {
 		t.Errorf("failed to remove point from location 0,0")
 	}
 
-	if len(pl.cells[1][1].points) != 2 {
+	if pl.GetCell(1, 1).NumPoints() != 2 {
 		t.Errorf("failed to move point to location 1,1")
 	}
 }
