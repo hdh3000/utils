@@ -2,11 +2,13 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"fs/fshttp"
+	"io"
 	"log"
-
 	"net/http"
 )
 
@@ -21,27 +23,43 @@ func main() {
 	fmt.Println("")
 
 	handler := func(w http.ResponseWriter, r *http.Request) {
-		defer w.WriteHeader(*fStatus)
-		if *fVerbose {
-			if err := r.ParseForm(); err != nil {
-				log.Printf("ERR: %s\n", err)
-				return
-			}
-
-			printer(r.Header, "HEADERS")
-			printer(r.PostForm, "POST-FORM")
-			printer(r.Form, "FORM")
-			fmt.Println("BODY")
-			b, err := ioutil.ReadAll(r.Body)
-			if err != nil {
-				log.Printf("ERR: %s\n", err)
-				return
-			}
-			fmt.Println(string(b))
-			fmt.Println("")
-			fmt.Println("==================")
-			fmt.Println("")
+		r.ParseForm()
+		writer := &bytes.Buffer{}
+		tee := io.TeeReader(r.Body, writer)
+		decoder := json.NewDecoder(tee)
+		req := dFlowFufillmentReq{}
+		if err := decoder.Decode(&req); err != nil {
+			panic(err)
 		}
+
+		rsp := dFlowResp{
+			FulfillmentText: req.QueryResult.FulfillmentText,
+		}
+
+		fmt.Println(writer.String())
+
+		fshttp.WriteJson(w, rsp)
+
+		//if *fVerbose {
+		//	if err := r.ParseForm(); err != nil {
+		//		log.Printf("ERR: %s\n", err)
+		//		return
+		//	}
+		//
+		//	printer(r.Header, "HEADERS")
+		//	printer(r.PostForm, "POST-FORM")
+		//	printer(r.Form, "FORM")
+		//	fmt.Println("BODY")
+		//	b, err := ioutil.ReadAll(r.Body)
+		//	if err != nil {
+		//		log.Printf("ERR: %s\n", err)
+		//		return
+		//	}
+		//	fmt.Println(string(b))
+		//	fmt.Println("")
+		//	fmt.Println("==================")
+		//	fmt.Println("")
+		//}
 	}
 
 	if err := http.ListenAndServe(fmt.Sprintf("127.0.0.1:%d", *fPort), &h{handler}); err != nil {
@@ -64,4 +82,55 @@ type h struct {
 
 func (h *h) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.handler(w, r)
+}
+
+type dFlowFufillmentReq struct {
+	ResponseID  string `json:"responseId"`
+	QueryResult struct {
+		QueryText                string `json:"queryText"`
+		Parameters               map[string]interface{}
+		AllRequiredParamsPresent bool   `json:"allRequiredParamsPresent"`
+		FulfillmentText          string `json:"fulfillmentText"`
+		FulfillmentMessages      []struct {
+			Text struct {
+				Text []string `json:"text"`
+			} `json:"text"`
+			Platform string `json:"platform,omitempty"`
+		} `json:"fulfillmentMessages"`
+		Intent struct {
+			Name        string `json:"name"`
+			DisplayName string `json:"displayName"`
+		} `json:"intent"`
+		IntentDetectionConfidence float64 `json:"intentDetectionConfidence"`
+		DiagnosticInfo            struct {
+		} `json:"diagnosticInfo"`
+		LanguageCode string `json:"languageCode"`
+	} `json:"queryResult"`
+	OriginalDetectIntentRequest struct {
+		Payload struct {
+			Data struct {
+				AuthedUsers []string `json:"authed_users"`
+				EventID     string   `json:"event_id"`
+				APIAppID    string   `json:"api_app_id"`
+				TeamID      string   `json:"team_id"`
+				Event       struct {
+					EventTs string `json:"event_ts"`
+					Channel string `json:"channel"`
+					Text    string `json:"text"`
+					Type    string `json:"type"`
+					User    string `json:"user"`
+					Ts      string `json:"ts"`
+				} `json:"event"`
+				Type      string  `json:"type"`
+				EventTime float64 `json:"event_time"`
+				Token     string  `json:"token"`
+			} `json:"data"`
+			Source string `json:"source"`
+		} `json:"payload"`
+	} `json:"originalDetectIntentRequest"`
+	Session string `json:"session"`
+}
+
+type dFlowResp struct {
+	FulfillmentText string `json:"fulfillmentText"`
 }

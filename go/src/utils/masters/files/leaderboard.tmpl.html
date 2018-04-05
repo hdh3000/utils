@@ -1,0 +1,51 @@
+{{define    "leaderboard"}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> a tradition like no other </title>
+    <meta name="description" content="a tradition like no other">
+    <meta name="author" content="sammy don">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div>a tradition like no other</div>
+        <div>
+            <div>top score</div>
+            <div>{{.topscore}}</div>
+        </div>
+    </div>
+    <div id="rankings">    {{range    $i,$p    := .contestants    }}
+        <div class="rank-card">
+            <div class="rank-card-title">
+                <div>{{$i}}</div>
+                <div>{{$p.name}}</div>
+                <div>{{$p.score}}</div>
+            </div>
+            <div class="rank-card-contrib">
+            {{range    $i,$g    :=    $p.choices}}
+                <div class="rank-group">
+                    <div>{{$g.optiongroup}}</div>
+                {{range    $i,$pick    :=    $g.picks}}
+                    <div class="player-score">
+                        <div>{{$pick.player}}</div>
+                        <div>{{$pick.par}}</div>
+                        <div>{{$pick.place}}</div>
+                    </div>
+                {{end}}
+                </div>
+            {{end}}
+            </div>
+        </div>
+    {{end}}
+    </div>
+</div>
+</div>
+</body>
+</html>
+{{end}}
+
+
+
