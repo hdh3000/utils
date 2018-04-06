@@ -180,6 +180,12 @@ rankings {
      font-size: .8em;
 }
 
+.tie-breaker > div {
+    display: flex;
+    font-style: italic;
+    font-size: .7em;
+}
 
-
-
+.tie-breaker > div > :last-child {
+    margin-left: 5px;
+}

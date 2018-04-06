@@ -22,6 +22,7 @@ func main() {
 	})
 
 	http.DefaultServeMux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		log.Println("handling request")
 		lb, err := masters.GetLeaderboard()
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
@@ -39,6 +40,8 @@ func main() {
 		http.ServeContent(w, r, "leaderboard", time.Now(), bytes.NewReader(tmpl))
 	})
 
-	log.Println("serving on 127.0.0.1:4040")
-	http.ListenAndServe("127.0.0.1:4040", http.DefaultServeMux)
+	log.Println("serving on 0.0.0.0:8080")
+	if err := http.ListenAndServe("0.0.0.0:8080", http.DefaultServeMux); err != nil {
+		panic(err)
+	}
 }

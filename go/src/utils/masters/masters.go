@@ -2,9 +2,10 @@ package masters
 
 import (
 	"bytes"
-	"fs/fsio"
+	"encoding/json"
 	"html/template"
 	"io"
+	"net/http"
 	"time"
 
 	"github.com/bluele/gcache"
@@ -64,27 +65,26 @@ func GetLogo() io.ReadSeeker {
 }
 
 func GetLeaderboard() (*LeaderBoardResp, error) {
-	//resp, err := http.Get("https://statdata.pgatour.com/r/014/leaderboard-v2mini.json")
-	//if err != nil {
-	//	return nil, err
-	//}
-	//
-	//log.Println("LEADER BOARD")
+	resp, err := http.Get("https://statdata.pgatour.com/r/014/leaderboard-v2mini.json")
+	if err != nil {
+		return nil, err
+	}
+
 	//f, err := os.Create("~/Desktop/masters.json")
 	//if err != nil {
 	//	panic(err)
 	//}
 	//tee := io.TeeReader(resp.Body, f) // Remove this
-	//
-	//leaderBoard := LeaderBoardResp{}
-	//if err := json.NewDecoder(tee).Decode(&leaderBoard); err != nil {
-	//	return nil, err
-	//}
 
 	leaderBoard := LeaderBoardResp{}
-	if err := fsio.ReadAndLockFileJSON("/Users/hdh/Desktop/masters.json", &leaderBoard); err != nil {
+	if err := json.NewDecoder(resp.Body).Decode(&leaderBoard); err != nil {
 		return nil, err
 	}
+
+	//leaderBoard := LeaderBoardResp{}
+	//if err := fsio.ReadAndLockFileJSON("/Users/hdh/Desktop/masters.json", &leaderBoard); err != nil {
+	//	return nil, err
+	//}
 
 	return &leaderBoard, nil
 }
