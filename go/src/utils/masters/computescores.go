@@ -47,6 +47,11 @@ func OrderContestants(players []*Player, c []*Contestant) error {
 				}
 				choice.Picks[i] = pick
 			}
+
+			sort.Slice(choice.Picks, func(i, j int) bool {
+				// Sort by name
+				return choice.Picks[i].Name < choice.Picks[j].Name
+			})
 		}
 
 		cont.Score = ComputeScore(cont)
