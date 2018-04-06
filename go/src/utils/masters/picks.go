@@ -12,6 +12,7 @@ type Contestant struct {
 	TieBreaker      int
 	Score           int
 	Choices         []*Choice
+	AllPicks        []*RankedPlayer
 }
 
 type Choice struct {
@@ -24,6 +25,7 @@ type RankedPlayer struct {
 	Score           int
 	Position        int    // 4
 	DisplayPosition string // T4
+	Thru            int
 }
 
 var Contestants = []*Contestant{

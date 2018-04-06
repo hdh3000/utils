@@ -9,17 +9,10 @@ import (
 
 func OrderContestants(players []*Player, c []*Contestant) error {
 	playerMap := make(map[string]*RankedPlayer)
-	maxPosition := 0
-	maxScore := 0
 	for _, p := range players {
 		playerPosition, err := strconv.Atoi(strings.Trim(p.CurrentPosition, "T"))
 		if err != nil {
 			return err
-		}
-
-		if playerPosition > maxPosition {
-			maxPosition = playerPosition
-			maxScore = p.TotalStrokes
 		}
 
 		playerMap[strings.ToLower(p.PlayerBio.LastName)] = &RankedPlayer{
@@ -27,15 +20,8 @@ func OrderContestants(players []*Player, c []*Contestant) error {
 			Score:           p.Total,
 			Position:        playerPosition,
 			DisplayPosition: p.CurrentPosition,
+			Thru:            p.Thru,
 		}
-	}
-
-	// Insert kopeka at end as he dropped out
-	playerMap["koepka"] = &RankedPlayer{
-		Name:            "koepka",
-		Position:        maxPosition,
-		Score:           maxScore,
-		DisplayPosition: fmt.Sprintf("%d", maxPosition),
 	}
 
 	for _, cont := range c {
@@ -48,11 +34,18 @@ func OrderContestants(players []*Player, c []*Contestant) error {
 				choice.Picks[i] = pick
 			}
 
-			sort.Slice(choice.Picks, func(i, j int) bool {
-				// Sort by name
-				return choice.Picks[i].Name < choice.Picks[j].Name
-			})
+			cont.AllPicks = append(cont.AllPicks, choice.Picks...)
 		}
+
+		sort.Slice(cont.AllPicks, func(i, j int) bool {
+			// Sort by position
+			if cont.AllPicks[i].Position == cont.AllPicks[j].Position {
+				return cont.AllPicks[i].Name < cont.AllPicks[j].Name
+			}
+
+			return cont.AllPicks[i].Position < cont.AllPicks[j].Position
+
+		})
 
 		cont.Score = ComputeScore(cont)
 	}
