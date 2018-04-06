@@ -1,28 +1,44 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
+	"bytes"
 	"log"
 	"net/http"
+	"time"
 	"utils/masters"
 )
 
+var lastModTime = time.Now()
+
 func main() {
-	resp, err := http.Get("https://statdata.pgatour.com/r/014/leaderboard-v2mini.json")
-	if err != nil {
-		log.Fatal(err)
-	}
+	http.DefaultServeMux.HandleFunc("/styles.css", func(w http.ResponseWriter, r *http.Request) {
+		styles := masters.GetStyles()
+		http.ServeContent(w, r, "styles.css", lastModTime, styles)
+	})
 
-	leaderBoard := masters.LeaderBoardResp{}
-	if err := json.NewDecoder(resp.Body).Decode(&leaderBoard); err != nil {
-		log.Fatal(err)
-	}
+	http.DefaultServeMux.HandleFunc("/logo.png", func(w http.ResponseWriter, r *http.Request) {
+		logo := masters.GetLogo()
+		http.ServeContent(w, r, "logo.png", lastModTime, logo)
+	})
 
-	masters.OrderContestants(leaderBoard.Leaderboard.Players, masters.Contestents)
+	http.DefaultServeMux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		lb, err := masters.GetLeaderboard()
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(err.Error()))
+			return
+		}
 
-	for i, cont := range masters.Contestents {
-		fmt.Printf("%d. %s: %d\n", i+1, cont.Name, cont.Score)
-	}
+		tmpl, err := masters.RenderTmpl(lb)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(err.Error()))
+			return
+		}
 
+		http.ServeContent(w, r, "leaderboard", time.Now(), bytes.NewReader(tmpl))
+	})
+
+	log.Println("serving on 127.0.0.1:4040")
+	http.ListenAndServe("127.0.0.1:4040", http.DefaultServeMux)
 }

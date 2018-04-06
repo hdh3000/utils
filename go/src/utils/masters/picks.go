@@ -1,15 +1,17 @@
 package masters
 
 type LeaderBoardArgs struct {
-	TopScore    int
 	Contestants []*Contestant
+	LastUpdated string
 }
 
 type Contestant struct {
-	Name       string
-	TieBreaker int
-	Score      int
-	Choices    []*Choice
+	Name            string
+	Position        int
+	DisplayPosition string
+	TieBreaker      int
+	Score           int
+	Choices         []*Choice
 }
 
 type Choice struct {
@@ -24,7 +26,7 @@ type RankedPlayer struct {
 	DisplayPosition string // T4
 }
 
-var Contestents = []*Contestant{
+var Contestants = []*Contestant{
 	{
 		Name:       "The Bachelor",
 		TieBreaker: 274,
@@ -564,8 +566,6 @@ var Contestents = []*Contestant{
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Kizzire"},
-					{Name: "Willett"},
 					{Name: "Scott"},
 					{Name: "Pieters"},
 				},

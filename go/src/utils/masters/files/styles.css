@@ -1,0 +1,185 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    background-color: #f5f6f7;
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#header {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #076652;
+    padding: 20px;
+    color: #ffff;
+    text-transform: capitalize;
+    font-size: 3em;
+    font-style: italic;
+}
+
+
+#logo {
+    background-image: url("logo.png")
+}
+
+#header > :nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    font-size: .1em;
+    justify-content: flex-start;
+    min-width: 145px;
+}
+
+#header > :nth-child(2) > div{
+    margin-right: 10px;
+}
+
+rankings {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    color: #595959;
+    font-size: .7em;
+}
+
+
+.rank-card {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08);
+    color: #595959;
+}
+
+
+.rank-card-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+    justify-content: space-between;
+}
+
+.rank-card-title > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.rank-card-title > div > div {
+    margin-left: 3px;
+    border-bottom: 1px solid transparent;
+    margin-right: 10px;
+}
+
+.rank-card-title > :first-child > :first-child {
+    margin-right: 10px;
+    border-bottom: 1px solid #076552;
+    color: #076552;
+}
+
+
+.rank-card-title > :last-child {
+    font-size: .5em;
+    font-style: italic;
+}
+
+.rank-card-contrib {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.rank-group {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.player-score > :first-child {
+    width: 70px;
+    text-transform: capitalize;
+}
+
+.player-score > :nth-child(2) {
+    width: 12px;
+    margin-right: 10px;
+    text-align: right;
+    color: #dd2a2a;
+}
+
+
+.player-score > :last-child {
+    color: #0f2bb7;;
+}
+
+.player-score:last-child {
+    border: none;
+
+}
+
+.player-score {
+    display: flex;
+    flex-direction: row;
+    border-bottom: .5px solid;
+    padding: 2px 3px 4px 3px;
+    margin: 2px 0px;
+}
+
+.player-score > div {
+    margin-right: 3px;
+     font-size: .8em;
+}
+
+
+
+

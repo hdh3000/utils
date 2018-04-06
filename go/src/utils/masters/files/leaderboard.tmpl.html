@@ -1,4 +1,4 @@
-{{define    "leaderboard"}}
+{{ define "leaderboard" }}
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,34 +11,46 @@
 <body>
 <div id="container">
     <div id="header">
-        <div>a tradition like no other</div>
         <div>
-            <div>top score</div>
-            <div>{{.topscore}}</div>
+            <div>a tradition unlike any other</div>
+        </div>
+
+        <div>
+            <div>last updated</div>
+            <div>{{.LastUpdated}}</div>
         </div>
     </div>
     <div id="rankings">
-    {{range $i,$p := .contestants}}
+    {{range $i,$p := .Contestants}}
         <div class="rank-card">
             <div class="rank-card-title">
-                <div>{{$i}}</div>
-                <div>{{$p.name}}</div>
-                <div>{{$p.score}}</div>
+                <div>
+                <div>{{$p.DisplayPosition}}</div>
+                <div>{{$p.Name}}</div>
+                </div>
+                <div>
+                    <div>{{$p.Score}}</div>
+                </div>
             </div>
         <div class="rank-card-contrib">
-        {{range $i,$g := $p.choices}}
+        {{range $i,$g := $p.Choices}}
             <div class="rank-group">
-                <div>{{$g.optiongroup}}</div>
-            {{range $i,$pick := $g.picks}}
+            {{range $i, $pick := $g.Picks}}
                 <div class="player-score">
-                    <div>{{$pick.player}}</div>
-                    <div>{{$pick.par}}</div>
-                    <div>{{$pick.place}}</div>
+                    <div>{{$pick.Name}}</div>
+                    <div>{{$pick.Score}}</div>
+                    <div>{{$pick.DisplayPosition}}</div>
                 </div>
             {{end}}
-            </div>
         </div>
         {{end}}
+        </div>
+            <div class="tie-breaker">
+                <div>
+                    <div>tie breaker</div>
+                    <div>{{$p.TieBreaker}}</div>
+                </div>
+            </div>
         </div>
     </div>
 {{end}}
