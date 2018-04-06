@@ -17,30 +17,32 @@
             <div>{{.topscore}}</div>
         </div>
     </div>
-    <div id="rankings">    {{range    $i,$p    := .contestants    }}
+    <div id="rankings">
+    {{range $i,$p := .contestants}}
         <div class="rank-card">
             <div class="rank-card-title">
                 <div>{{$i}}</div>
                 <div>{{$p.name}}</div>
                 <div>{{$p.score}}</div>
             </div>
-            <div class="rank-card-contrib">
-            {{range    $i,$g    :=    $p.choices}}
-                <div class="rank-group">
-                    <div>{{$g.optiongroup}}</div>
-                {{range    $i,$pick    :=    $g.picks}}
-                    <div class="player-score">
-                        <div>{{$pick.player}}</div>
-                        <div>{{$pick.par}}</div>
-                        <div>{{$pick.place}}</div>
-                    </div>
-                {{end}}
+        <div class="rank-card-contrib">
+        {{range $i,$g := $p.choices}}
+            <div class="rank-group">
+                <div>{{$g.optiongroup}}</div>
+            {{range $i,$pick := $g.picks}}
+                <div class="player-score">
+                    <div>{{$pick.player}}</div>
+                    <div>{{$pick.par}}</div>
+                    <div>{{$pick.place}}</div>
                 </div>
             {{end}}
             </div>
         </div>
-    {{end}}
+        {{end}}
+        </div>
     </div>
+{{end}}
+</div>
 </div>
 </div>
 </body>

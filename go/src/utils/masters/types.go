@@ -6,24 +6,24 @@ type LeaderBoardResp struct {
 }
 
 type Leaderboard struct {
-	TourCode         string   `json:"tour_code"`
-	TourName         string   `json:"tour_name"`
-	TournamentID     string   `json:"tournament_id"`
-	TournamentName   string   `json:"tournament_name"`
-	StartDate        string   `json:"start_date"`
-	EndDate          string   `json:"end_date"`
-	TournamentFormat string   `json:"tournament_format"`
-	ScoringType      string   `json:"scoring_type"`
-	InCup            bool     `json:"in_cup"`
-	TotalRounds      int      `json:"total_rounds"`
-	IsStarted        bool     `json:"is_started"`
-	IsFinished       bool     `json:"is_finished"`
-	CurrentRound     int      `json:"current_round"`
-	RoundState       string   `json:"round_state"`
-	InPlayoff        bool     `json:"in_playoff"`
-	Courses          []Course `json:"courses"`
-	CutLine          CutLine  `json:"cut_line"`
-	Players          []Player `json:"players"`
+	TourCode         string    `json:"tour_code"`
+	TourName         string    `json:"tour_name"`
+	TournamentID     string    `json:"tournament_id"`
+	TournamentName   string    `json:"tournament_name"`
+	StartDate        string    `json:"start_date"`
+	EndDate          string    `json:"end_date"`
+	TournamentFormat string    `json:"tournament_format"`
+	ScoringType      string    `json:"scoring_type"`
+	InCup            bool      `json:"in_cup"`
+	TotalRounds      int       `json:"total_rounds"`
+	IsStarted        bool      `json:"is_started"`
+	IsFinished       bool      `json:"is_finished"`
+	CurrentRound     int       `json:"current_round"`
+	RoundState       string    `json:"round_state"`
+	InPlayoff        bool      `json:"in_playoff"`
+	Courses          []Course  `json:"courses"`
+	CutLine          CutLine   `json:"cut_line"`
+	Players          []*Player `json:"players"`
 }
 
 type Player struct {
