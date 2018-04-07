@@ -10,21 +10,38 @@ import (
 func OrderContestants(players []*Player, c []*Contestant) error {
 	playerMap := make(map[string]*RankedPlayer)
 	for _, p := range players {
-		playerPosition, err := strconv.Atoi(strings.Trim(p.CurrentPosition, "T"))
-		if err != nil {
-			return err
+
+		var playerPosition int
+		if p.CurrentPosition != "" {
+			var err error
+			playerPosition, err = strconv.Atoi(strings.Trim(p.CurrentPosition, "T"))
+			if err != nil {
+				return err
+			}
+		} else {
+			p.CurrentPosition = "C51"
+			playerPosition = 51
 		}
 
-		playerMap[strings.ToLower(p.PlayerBio.LastName)] = &RankedPlayer{
-			Name:            strings.ToLower(p.PlayerBio.LastName),
+		key := p.PlayerBio.LastName
+		if p.PlayerID == "24024" {
+			key = "zjohnson"
+		} else if p.PlayerID == "30925" {
+			key = "djohnson"
+		}
+
+		playerMap[strings.ToLower(key)] = &RankedPlayer{
+			Name:            fmt.Sprintf("%s. %s", strings.ToLower(p.PlayerBio.ShortName), strings.ToLower(p.PlayerBio.LastName)),
 			Score:           p.Total,
 			Position:        playerPosition,
 			DisplayPosition: p.CurrentPosition,
 			Thru:            p.Thru,
 		}
+
 	}
 
 	for _, cont := range c {
+		var allPicks []*RankedPlayer
 		for _, choice := range cont.Choices {
 			for i, rp := range choice.Picks {
 				pick, ok := playerMap[strings.ToLower(rp.Name)]
@@ -34,19 +51,20 @@ func OrderContestants(players []*Player, c []*Contestant) error {
 				choice.Picks[i] = pick
 			}
 
-			cont.AllPicks = append(cont.AllPicks, choice.Picks...)
+			allPicks = append(allPicks, choice.Picks...)
 		}
 
-		sort.Slice(cont.AllPicks, func(i, j int) bool {
+		sort.Slice(allPicks, func(i, j int) bool {
 			// Sort by position
-			if cont.AllPicks[i].Position == cont.AllPicks[j].Position {
-				return cont.AllPicks[i].Name < cont.AllPicks[j].Name
+			if allPicks[i].Position == allPicks[j].Position {
+				return allPicks[i].Name < allPicks[j].Name
 			}
 
-			return cont.AllPicks[i].Position < cont.AllPicks[j].Position
+			return allPicks[i].Position < allPicks[j].Position
 
 		})
 
+		cont.AllPicks = allPicks
 		cont.Score = ComputeScore(cont)
 	}
 

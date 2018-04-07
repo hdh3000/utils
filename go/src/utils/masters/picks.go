@@ -143,7 +143,7 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Johnson"},
+					{Name: "DJohnson"},
 					{Name: "Thomas"},
 				},
 			},
@@ -233,7 +233,7 @@ var Contestants = []*Contestant{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
 					{Name: "Spieth"},
-					{Name: "Johnson"},
+					{Name: "DJohnson"},
 				},
 			},
 			{
@@ -277,7 +277,7 @@ var Contestants = []*Contestant{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
 					{Name: "Spieth"},
-					{Name: "Johnson"},
+					{Name: "DJohnson"},
 				},
 			},
 			{
@@ -292,7 +292,7 @@ var Contestants = []*Contestant{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
 					{Name: "Scott"},
-					{Name: "Johnson"},
+					{Name: "ZJohnson"},
 				},
 			},
 		},
@@ -323,7 +323,7 @@ var Contestants = []*Contestant{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
 					{Name: "Spieth"},
-					{Name: "Johnson"},
+					{Name: "DJohnson"},
 				},
 			},
 			{
@@ -383,7 +383,7 @@ var Contestants = []*Contestant{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
 					{Name: "Scott"},
-					{Name: "Johnson"},
+					{Name: "ZJohnson"},
 				},
 			},
 		},
@@ -473,7 +473,7 @@ var Contestants = []*Contestant{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
 					{Name: "Vegas"},
-					{Name: "Johnson"},
+					{Name: "ZJohnson"},
 				},
 			},
 		},
@@ -562,7 +562,7 @@ var Contestants = []*Contestant{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
 					{Name: "Scott"},
-					{Name: "Johnson"},
+					{Name: "ZJohnson"},
 				},
 			},
 		},
@@ -650,7 +650,7 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Johnson"},
+					{Name: "ZJohnson"},
 					{Name: "Cabrera"},
 				},
 			},
@@ -768,7 +768,7 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Johnson"},
+					{Name: "DJohnson"},
 					{Name: "Thomas"},
 				},
 			},

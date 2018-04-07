@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f74191e3-8a6d-4c56-b084-9bc35043c747" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/go/src/utils/masters/computescores.go" afterPath="$PROJECT_DIR$/go/src/utils/masters/computescores.go" />
       <change beforePath="$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html" afterPath="$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html" />
       <change beforePath="$PROJECT_DIR$/go/src/utils/masters/files/styles.css" afterPath="$PROJECT_DIR$/go/src/utils/masters/files/styles.css" />
       <change beforePath="$PROJECT_DIR$/go/src/utils/masters/leaderboard.go" afterPath="$PROJECT_DIR$/go/src/utils/masters/leaderboard.go" />
-      <change beforePath="$PROJECT_DIR$/go/src/utils/masters/logo.go" afterPath="$PROJECT_DIR$/go/src/utils/masters/logo.go" />
       <change beforePath="$PROJECT_DIR$/go/src/utils/masters/masters.go" afterPath="$PROJECT_DIR$/go/src/utils/masters/masters.go" />
+      <change beforePath="$PROJECT_DIR$/go/src/utils/masters/picks.go" afterPath="$PROJECT_DIR$/go/src/utils/masters/picks.go" />
+      <change beforePath="$PROJECT_DIR$/go/src/utils/masters/styles.go" afterPath="$PROJECT_DIR$/go/src/utils/masters/styles.go" />
+      <change beforePath="$PROJECT_DIR$/masters" afterPath="$PROJECT_DIR$/masters" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
-              <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+              <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -47,7 +50,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
               <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-              <folding />
+              <folding>
+                <marker date="1523129022506" expanded="true" signature="145:811705" ph="{...}" />
+                <marker date="1523129022506" expanded="true" signature="196:811705" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,10 +61,10 @@
       <file leaf-file-name="masters.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/masters.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+            <state relative-caret-position="152">
+              <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
               <folding>
-                <element signature="e#17#125#0" expanded="true" />
+                <element signature="e#17#131#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/leaderboard.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="562">
-              <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+              <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -84,8 +90,8 @@
       <file leaf-file-name="computescores.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/computescores.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+            <state relative-caret-position="261">
+              <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
               <folding>
                 <element signature="e#17#64#0" expanded="true" />
               </folding>
@@ -96,8 +102,8 @@
       <file leaf-file-name="types.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/types.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="8" />
+            <state relative-caret-position="252">
+              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -106,8 +112,8 @@
       <file leaf-file-name="picks.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/picks.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            <state relative-caret-position="243">
+              <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -116,8 +122,8 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="176" column="28" lean-forward="true" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
+            <state relative-caret-position="183">
+              <caret line="141" column="1" lean-forward="true" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -153,6 +159,12 @@
       <find>eng</find>
       <find>rank</find>
       <find>rankings</find>
+      <find>.ran</find>
+      <find>za</find>
+      <find>Johnson</find>
+      <find>Dustin Johnson</find>
+      <find>Zach</find>
+      <find>cont.A</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -210,11 +222,11 @@
         <option value="$PROJECT_DIR$/go/src/utils/main/masters.go" />
         <option value="$PROJECT_DIR$/go/src/utils/masters/templates/leaderboard.tmpl.html" />
         <option value="$PROJECT_DIR$/go/src/utils/masters/types.go" />
+        <option value="$PROJECT_DIR$/go/src/utils/main/masters/main.go" />
+        <option value="$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html" />
+        <option value="$PROJECT_DIR$/go/src/utils/masters/masters.go" />
         <option value="$PROJECT_DIR$/go/src/utils/masters/picks.go" />
         <option value="$PROJECT_DIR$/go/src/utils/masters/computescores.go" />
-        <option value="$PROJECT_DIR$/go/src/utils/main/masters/main.go" />
-        <option value="$PROJECT_DIR$/go/src/utils/masters/masters.go" />
-        <option value="$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html" />
         <option value="$PROJECT_DIR$/go/src/utils/masters/files/styles.css" />
       </list>
     </option>
@@ -735,31 +747,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/picks.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/leaderboard.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/types.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="8" />
-          <folding />
+          <folding>
+            <marker date="1523129022506" expanded="true" signature="145:811705" ph="{...}" />
+            <marker date="1523129022506" expanded="true" signature="196:811705" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -773,12 +764,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/computescores.go">
+    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/leaderboard.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+        <state relative-caret-position="562">
+          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/masters.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
           <folding>
-            <element signature="e#17#64#0" expanded="true" />
+            <element signature="e#17#131#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -788,30 +787,46 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/masters.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
-          <folding>
-            <element signature="e#17#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
-          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/types.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/picks.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/computescores.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <folding>
+            <element signature="e#17#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="176" column="28" lean-forward="true" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
+        <state relative-caret-position="183">
+          <caret line="141" column="1" lean-forward="true" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
           <folding />
         </state>
       </provider>

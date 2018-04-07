@@ -39,7 +39,7 @@
                     <div>{{$pick.Name}}</div>
                     <div>{{$pick.Score}}</div>
                     <div>{{$pick.DisplayPosition}}</div>
-                    <div><div>{{$pick.Thru}}</div></div>
+                    <div><div>{{if or (eq $pick.Thru 18) (eq $pick.Thru 0)}}-{{else}}{{$pick.Thru}}{{end}}</div></div>
                 </div>
         {{end}}
         </div>

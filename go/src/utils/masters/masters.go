@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"io"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/bluele/gcache"
@@ -70,14 +71,14 @@ func GetLeaderboard() (*LeaderBoardResp, error) {
 		return nil, err
 	}
 
-	//f, err := os.Create("~/Desktop/masters.json")
-	//if err != nil {
-	//	panic(err)
-	//}
-	//tee := io.TeeReader(resp.Body, f) // Remove this
+	f, err := os.Create("/Users/hdh/Desktop/masters.json")
+	if err != nil {
+		panic(err)
+	}
+	tee := io.TeeReader(resp.Body, f) // Remove this
 
 	leaderBoard := LeaderBoardResp{}
-	if err := json.NewDecoder(resp.Body).Decode(&leaderBoard); err != nil {
+	if err := json.NewDecoder(tee).Decode(&leaderBoard); err != nil {
 		return nil, err
 	}
 
