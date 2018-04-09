@@ -6,7 +6,6 @@ import (
 	"html/template"
 	"io"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/bluele/gcache"
@@ -21,7 +20,7 @@ var leaderBoard = template.Must(template.New("leaderboard").Funcs(map[string]int
 }).Parse(string(files_leaderboard_tmpl_html())))
 
 // Cache for a 30 seconds here to avoid any sort of detection by pga (if it exists).
-var tmplCache = gcache.New(10).Expiration(time.Minute).Build()
+var tmplCache = gcache.New(10).Expiration(time.Second).Build()
 
 func RenderTmpl(leaderboard *LeaderBoardResp) ([]byte, error) {
 	v, err := tmplCache.Get("leaderboard")
@@ -71,19 +70,19 @@ func GetLeaderboard() (*LeaderBoardResp, error) {
 		return nil, err
 	}
 
-	f, err := os.Create("/Users/hdh/Desktop/masters.json")
-	if err != nil {
-		panic(err)
-	}
-	tee := io.TeeReader(resp.Body, f) // Remove this
+	//f, err := os.Create("/Users/hdh/Desktop/masters.json")
+	//if err != nil {
+	//	panic(err)
+	//}
+	//tee := io.TeeReader(resp.Body, f) // Remove this
 
 	leaderBoard := LeaderBoardResp{}
-	if err := json.NewDecoder(tee).Decode(&leaderBoard); err != nil {
+	if err := json.NewDecoder(resp.Body).Decode(&leaderBoard); err != nil {
 		return nil, err
 	}
 
-	//leaderBoard := LeaderBoardResp{}
 	//if err := fsio.ReadAndLockFileJSON("/Users/hdh/Desktop/masters.json", &leaderBoard); err != nil {
+	//leaderBoard := LeaderBoardResp{}
 	//	return nil, err
 	//}
 

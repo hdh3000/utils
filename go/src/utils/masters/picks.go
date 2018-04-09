@@ -22,6 +22,7 @@ type Choice struct {
 
 type RankedPlayer struct {
 	Name            string // LastName
+	Ref             string
 	Score           int
 	Position        int    // 4
 	DisplayPosition string // T4
@@ -48,29 +49,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "McIlroy"},
-					{Name: "Rose"},
+					{Ref: "McIlroy"},
+					{Ref: "Rose"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Watson"},
-					{Name: "Casey"},
-					{Name: "Hoffman"},
+					{Ref: "Watson"},
+					{Ref: "Casey"},
+					{Ref: "Hoffman"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "DeChambeau"},
+					{Ref: "Scott"},
+					{Ref: "DeChambeau"},
 				},
 			},
 		},
@@ -93,29 +94,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "Fowler"},
+					{Ref: "Spieth"},
+					{Ref: "Fowler"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Watson"},
-					{Name: "Stenson"},
-					{Name: "Kuchar"},
+					{Ref: "Watson"},
+					{Ref: "Stenson"},
+					{Ref: "Kuchar"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Cabrera"},
+					{Ref: "Scott"},
+					{Ref: "Cabrera"},
 				},
 			},
 		},
@@ -137,29 +138,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "DJohnson"},
-					{Name: "Thomas"},
+					{Ref: "DJohnson"},
+					{Ref: "Thomas"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Oosthuizen"},
-					{Name: "Grace"},
-					{Name: "Hoffman"},
+					{Ref: "Oosthuizen"},
+					{Ref: "Grace"},
+					{Ref: "Hoffman"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Pieters"},
+					{Ref: "Scott"},
+					{Ref: "Pieters"},
 				},
 			},
 		},
@@ -182,29 +183,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Fowler"},
-					{Name: "Rose"},
+					{Ref: "Fowler"},
+					{Ref: "Rose"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Kuchar"},
-					{Name: "Cantlay"},
-					{Name: "Casey"},
+					{Ref: "Kuchar"},
+					{Ref: "Cantlay"},
+					{Ref: "Casey"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Singh"},
-					{Name: "Kim"},
+					{Ref: "Singh"},
+					{Ref: "Kim"},
 				},
 			},
 		},
@@ -226,29 +227,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "DJohnson"},
+					{Ref: "Spieth"},
+					{Ref: "DJohnson"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Watson"},
-					{Name: "Oosthuizen"},
-					{Name: "Kuchar"},
+					{Ref: "Watson"},
+					{Ref: "Oosthuizen"},
+					{Ref: "Kuchar"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Willett"},
+					{Ref: "Scott"},
+					{Ref: "Willett"},
 				},
 			},
 		},
@@ -270,29 +271,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Mickelson"},
+					{Ref: "Mickelson"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "DJohnson"},
+					{Ref: "Spieth"},
+					{Ref: "DJohnson"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Kuchar"},
-					{Name: "Grace"},
-					{Name: "Watson"},
+					{Ref: "Kuchar"},
+					{Ref: "Grace"},
+					{Ref: "Watson"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "ZJohnson"},
+					{Ref: "Scott"},
+					{Ref: "ZJohnson"},
 				},
 			},
 		},
@@ -316,29 +317,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "DJohnson"},
+					{Ref: "Spieth"},
+					{Ref: "DJohnson"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Kuchar"},
-					{Name: "Chappell"},
-					{Name: "Hatton"},
+					{Ref: "Kuchar"},
+					{Ref: "Chappell"},
+					{Ref: "Hatton"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Schwartzel"},
+					{Ref: "Scott"},
+					{Ref: "Schwartzel"},
 				},
 			},
 		},
@@ -361,29 +362,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Mickelson"},
+					{Ref: "Mickelson"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Rose"},
-					{Name: "McIlroy"},
+					{Ref: "Rose"},
+					{Ref: "McIlroy"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Noren"},
-					{Name: "Stenson"},
-					{Name: "Schauffele"},
+					{Ref: "Noren"},
+					{Ref: "Stenson"},
+					{Ref: "Schauffele"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "ZJohnson"},
+					{Ref: "Scott"},
+					{Ref: "ZJohnson"},
 				},
 			},
 		},
@@ -406,29 +407,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "Garcia"},
+					{Ref: "Spieth"},
+					{Ref: "Garcia"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Watson"},
-					{Name: "Fisher"},
-					{Name: "Fleetwood"},
+					{Ref: "Watson"},
+					{Ref: "Fisher"},
+					{Ref: "Fleetwood"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Singh"},
+					{Ref: "Scott"},
+					{Ref: "Singh"},
 				},
 			},
 		},
@@ -451,29 +452,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Mickelson"},
+					{Ref: "Mickelson"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "Day"},
+					{Ref: "Spieth"},
+					{Ref: "Day"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Kuchar"},
-					{Name: "Oosthuizen"},
-					{Name: "Watson"},
+					{Ref: "Kuchar"},
+					{Ref: "Oosthuizen"},
+					{Ref: "Watson"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Vegas"},
-					{Name: "ZJohnson"},
+					{Ref: "Vegas"},
+					{Ref: "ZJohnson"},
 				},
 			},
 		},
@@ -495,29 +496,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Thomas"},
-					{Name: "Rose"},
+					{Ref: "Thomas"},
+					{Ref: "Rose"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Kuchar"},
-					{Name: "Noren"},
-					{Name: "Hoffman"},
+					{Ref: "Kuchar"},
+					{Ref: "Noren"},
+					{Ref: "Hoffman"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Kaymer"},
+					{Ref: "Scott"},
+					{Ref: "Kaymer"},
 				},
 			},
 		},
@@ -540,29 +541,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Thomas"},
-					{Name: "McIlroy"},
+					{Ref: "Thomas"},
+					{Ref: "McIlroy"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Watson"},
-					{Name: "Casey"},
-					{Name: "Hoffman"},
+					{Ref: "Watson"},
+					{Ref: "Casey"},
+					{Ref: "Hoffman"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "ZJohnson"},
+					{Ref: "Scott"},
+					{Ref: "ZJohnson"},
 				},
 			},
 		},
@@ -585,29 +586,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "Fowler"},
+					{Ref: "Spieth"},
+					{Ref: "Fowler"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Hoffman"},
-					{Name: "Stenson"},
-					{Name: "Oosthuizen"},
+					{Ref: "Hoffman"},
+					{Ref: "Stenson"},
+					{Ref: "Oosthuizen"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Schwartzel"},
-					{Name: "Li"},
+					{Ref: "Schwartzel"},
+					{Ref: "Li"},
 				},
 			},
 		},
@@ -629,29 +630,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Mickelson"},
+					{Ref: "Mickelson"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "McIlroy"},
+					{Ref: "Spieth"},
+					{Ref: "McIlroy"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Watson"},
-					{Name: "Fitzpatrick"},
-					{Name: "Berger"},
+					{Ref: "Watson"},
+					{Ref: "Fitzpatrick"},
+					{Ref: "Berger"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "ZJohnson"},
-					{Name: "Cabrera"},
+					{Ref: "ZJohnson"},
+					{Ref: "Cabrera"},
 				},
 			},
 		},
@@ -673,29 +674,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Mickelson"},
+					{Ref: "Mickelson"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "Fowler"},
+					{Ref: "Spieth"},
+					{Ref: "Fowler"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Aphibarnrat"},
-					{Name: "Finau"},
-					{Name: "Kisner"},
+					{Ref: "Aphibarnrat"},
+					{Ref: "Finau"},
+					{Ref: "Kisner"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Vegas"},
-					{Name: "Ikeda"},
+					{Ref: "Vegas"},
+					{Ref: "Ikeda"},
 				},
 			},
 		},
@@ -718,29 +719,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "Thomas"},
+					{Ref: "Spieth"},
+					{Ref: "Thomas"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Oosthuizen"},
-					{Name: "Kuchar"},
-					{Name: "Casey"},
+					{Ref: "Oosthuizen"},
+					{Ref: "Kuchar"},
+					{Ref: "Casey"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Pieters"},
+					{Ref: "Scott"},
+					{Ref: "Pieters"},
 				},
 			},
 		},
@@ -762,29 +763,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "DJohnson"},
-					{Name: "Thomas"},
+					{Ref: "DJohnson"},
+					{Ref: "Thomas"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Fleetwood"},
-					{Name: "Casey"},
-					{Name: "Fitzpatrick"},
+					{Ref: "Fleetwood"},
+					{Ref: "Casey"},
+					{Ref: "Fitzpatrick"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Kizzire"},
-					{Name: "Willett"},
+					{Ref: "Kizzire"},
+					{Ref: "Willett"},
 				},
 			},
 		},
@@ -806,29 +807,29 @@ var Contestants = []*Contestant{
 			{
 				OptionGroup: "Group A",
 				Picks: []*RankedPlayer{
-					{Name: "Woods"},
+					{Ref: "Woods"},
 				},
 			},
 			{
 				OptionGroup: "Group B",
 				Picks: []*RankedPlayer{
-					{Name: "Spieth"},
-					{Name: "McIlroy"},
+					{Ref: "Spieth"},
+					{Ref: "McIlroy"},
 				},
 			},
 			{
 				OptionGroup: "Group C",
 				Picks: []*RankedPlayer{
-					{Name: "Aphibarnrat"},
-					{Name: "Watson"},
-					{Name: "Casey"},
+					{Ref: "Aphibarnrat"},
+					{Ref: "Watson"},
+					{Ref: "Casey"},
 				},
 			},
 			{
 				OptionGroup: "Group D",
 				Picks: []*RankedPlayer{
-					{Name: "Scott"},
-					{Name: "Willett"},
+					{Ref: "Scott"},
+					{Ref: "Willett"},
 				},
 			},
 		},

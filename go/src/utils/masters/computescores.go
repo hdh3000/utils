@@ -32,6 +32,7 @@ func OrderContestants(players []*Player, c []*Contestant) error {
 
 		playerMap[strings.ToLower(key)] = &RankedPlayer{
 			Name:            fmt.Sprintf("%s. %s", strings.ToLower(p.PlayerBio.ShortName), strings.ToLower(p.PlayerBio.LastName)),
+			Ref:             key,
 			Score:           p.Total,
 			Position:        playerPosition,
 			DisplayPosition: p.CurrentPosition,
@@ -44,9 +45,9 @@ func OrderContestants(players []*Player, c []*Contestant) error {
 		var allPicks []*RankedPlayer
 		for _, choice := range cont.Choices {
 			for i, rp := range choice.Picks {
-				pick, ok := playerMap[strings.ToLower(rp.Name)]
+				pick, ok := playerMap[strings.ToLower(rp.Ref)]
 				if !ok {
-					return fmt.Errorf("%s is not a player", strings.ToLower(rp.Name))
+					return fmt.Errorf("%s is not a player", strings.ToLower(rp.Ref))
 				}
 				choice.Picks[i] = pick
 			}
