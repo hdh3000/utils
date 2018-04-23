@@ -1,0 +1,35 @@
+{{ define "listoflists" }}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lists</title>
+    <meta name="description" content="lists">
+    <meta name="author" content="henry hutcheson">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="header">
+        <div>All Lists</div>
+    </div>
+    <div id="body">
+    {{ range $i, $list := .Lists }}
+        <div class="list entry">
+            <div class="title">{{$list.Title}}</div>
+            <div class="button view">Edit</div>
+            <div class="button new">Start</div>
+            <div class="button delete">Delete</div>
+            <div class="active">
+            {{ range $i, $instance := $list.Active }}
+                <div class="list entry">
+                    <div class="title button view">{{$instance.Id}}</div>
+                    <div class="button delete">Delete</div>
+                </div>
+            {{ end }}
+            </div>
+        </div>
+    {{ end }}
+    </div>
+</body>
+</html>
+{{end}}
