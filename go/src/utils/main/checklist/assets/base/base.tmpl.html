@@ -1,0 +1,24 @@
+{{define "base"}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lists</title>
+    <meta name="description" content="lists">
+    <meta name="author" content="henry hutcheson">
+    <link rel="stylesheet" href="/reset.css">
+    {{/* TODO(henry): decide if you want to include the css here, or keep it in tempaltes*/}}
+
+
+</head>
+<body>
+<div class="container">
+    {{range $_, $i := .imported}}
+    <div class="$i.class">
+            {{$i.html}}
+    </div>
+    {{end}}
+</div>
+</body>
+</html>
+{{end}}
