@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f74191e3-8a6d-4c56-b084-9bc35043c747" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/checklist/checklist.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/checklist/checklist_test.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/checklist/items.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.tmpl.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/main/checklist/assets/listview.tmpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/go/src/utils/main/checklist/checklist.go" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/go/src/utils/checklist/checklist.go" afterPath="$PROJECT_DIR$/go/src/utils/checklist/checklist.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,83 +17,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="leaderboard.tmpl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html">
+      <file leaf-file-name="checklist.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="masters.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/masters/masters.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="29" column="82" lean-forward="false" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
+            <state relative-caret-position="243">
+              <caret line="87" column="1" lean-forward="false" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="checklist.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist.go">
+        <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/checklist.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checklist_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="225">
+              <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding>
-                <element signature="e#19#40#0" expanded="true" />
+                <element signature="e#14#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/items.go">
+      <file leaf-file-name="server.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../fsdev-mac/tools/go/src/net/http/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            <state relative-caret-position="252">
+              <caret line="2307" column="5" lean-forward="false" selection-start-line="2307" selection-start-column="5" selection-end-line="2307" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listcontainer.tmpl.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.tmpl.html">
+      <file leaf-file-name="fs.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../fsdev-mac/tools/go/src/net/http/fs.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="252">
+              <caret line="665" column="5" lean-forward="false" selection-start-line="665" selection-start-column="5" selection-end-line="665" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/main/masters/main.go">
+        <entry file="file://$PROJECT_DIR$/../mn/projects/fullstory/go/src/golang.org/x/tools/cmd/heapview/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state relative-caret-position="314">
+              <caret line="58" column="13" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leaderboard.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/src/utils/masters/leaderboard.go">
+      <file leaf-file-name="scratch.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="40" column="72" lean-forward="false" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
+            <state relative-caret-position="165">
+              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scratch.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="57" column="18" lean-forward="true" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listview.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/listview.tmpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -103,9 +102,21 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="749">
-              <caret line="146" column="4" lean-forward="false" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+            <state relative-caret-position="243">
+              <caret line="99" column="7" lean-forward="false" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checklist_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="23" column="6" lean-forward="false" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+              <folding>
+                <element signature="e#19#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,8 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>print</find>
-      <find>%x</find>
       <find>ERROR</find>
       <find>even</find>
       <find>eventTime</find>
@@ -149,6 +158,10 @@
       <find>t.</find>
       <find>.name</find>
       <find>player</find>
+      <find>.list .ti</find>
+      <find>box-s</find>
+      <find>.title</find>
+      <find>box</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -161,10 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/go/src/markov/local/impl.go" />
-        <option value="$PROJECT_DIR$/go/src/utils/markov/local/main/local-markov.go" />
-        <option value="$PROJECT_DIR$/go/src/utils/scraper/scraper.go" />
-        <option value="$PROJECT_DIR$/go/src/utils/main/scraper/scraper.go" />
         <option value="$PROJECT_DIR$/go/src/utils/main/scraper/scratch.go" />
         <option value="$PROJECT_DIR$/go/src/utils/markov/local/impl_test.go" />
         <option value="$PROJECT_DIR$/go/src/utils/markov/local/scanner.go" />
@@ -205,13 +214,17 @@
         <option value="$PROJECT_DIR$/go/src/utils/masters/files/styles.css" />
         <option value="$PROJECT_DIR$/go/src/utils/masters/computescores.go" />
         <option value="$PROJECT_DIR$/go/src/utils/masters/files/Guru Web App.htm" />
-        <option value="$PROJECT_DIR$/go/src/utils/checklist/checklist.go" />
         <option value="$PROJECT_DIR$/go/src/utils/checklist/items.go" />
         <option value="$PROJECT_DIR$/go/src/utils/checklist/checklist_test.go" />
         <option value="$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.html.go" />
         <option value="$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.html" />
         <option value="$PROJECT_DIR$/go/src/utils/main/checklist/assets/checklist.html.go" />
         <option value="$PROJECT_DIR$/go/src/utils/main/checklist/assets/listview.tmpl.html" />
+        <option value="$PROJECT_DIR$/go/src/utils/checklist/checklist.go" />
+        <option value="$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.html.go" />
+        <option value="$PROJECT_DIR$/go/src/utils/main/checklist/checklist.go" />
+        <option value="$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.html" />
+        <option value="$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.css" />
       </list>
     </option>
   </component>
@@ -222,9 +235,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="720" />
-    <option name="height" value="877" />
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -277,14 +289,6 @@
               <item name="go" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="checklist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -313,7 +317,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="masters" type="462c0819:PsiDirectoryNode" />
+              <item name="markov" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="utils" type="b2602c69:ProjectViewProjectNode" />
@@ -450,10 +454,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12509929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28969958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -486,42 +490,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/go/src/utils/markov/sqlstore.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../mn/projects/fullstory/go/src/cloud.google.com/go/datastore/key.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3750">
-          <caret line="261" column="5" lean-forward="false" selection-start-line="261" selection-start-column="5" selection-end-line="261" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../mn/projects/fullstory/go/src/cloud.google.com/go/datastore/datastore.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6420">
-          <caret line="440" column="17" lean-forward="false" selection-start-line="440" selection-start-column="17" selection-end-line="440" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/markov/gcdatastorestore.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/main/markov/markov.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/poker/model.go" />
     <entry file="file://$PROJECT_DIR$/../fsdev-mac/tools/go/src/testing/testing.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
@@ -615,18 +583,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="278" column="5" lean-forward="false" selection-start-line="278" selection-start-column="5" selection-end-line="278" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/go/src/utils/masters/bindata-toc.go" />
-    <entry file="file://$PROJECT_DIR$/../fsdev-mac/tools/go/src/net/http/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="134" column="4" lean-forward="false" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../fsdev-mac/tools/go/src/bytes/reader.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="674">
@@ -638,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="334" column="19" lean-forward="false" selection-start-line="334" selection-start-column="19" selection-end-line="334" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,7 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5100">
           <caret line="340" column="34" lean-forward="false" selection-start-line="340" selection-start-column="34" selection-end-line="340" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -691,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9015">
           <caret line="604" column="5" lean-forward="false" selection-start-line="604" selection-start-column="5" selection-end-line="604" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,9 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-          <folding>
-            <element signature="e#17#64#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -726,60 +678,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/Guru Web App.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.html.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/Guru Web App.htm" />
+    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.html.go" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="146" column="4" lean-forward="false" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding>
-            <element signature="e#19#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/items.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -794,32 +705,109 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/leaderboard.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/checklist.html.go">
+    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/checklist.html.go" />
+    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="23" column="6" lean-forward="false" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <element signature="e#19#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/checklist/checklist.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="87" column="1" lean-forward="false" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.html.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/listview.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/listcontainer.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/../fsdev-mac/tools/go/src/net/http/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="7" />
+        <state relative-caret-position="252">
+          <caret line="2307" column="5" lean-forward="false" selection-start-line="2307" selection-start-column="5" selection-end-line="2307" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mn/projects/fullstory/go/src/golang.org/x/tools/cmd/heapview/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="58" column="13" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../fsdev-mac/tools/go/src/net/http/fs.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="665" column="5" lean-forward="false" selection-start-line="665" selection-start-column="5" selection-end-line="665" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/checklist.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#14#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/masters/files/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="99" column="7" lean-forward="false" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/src/utils/main/checklist/assets/scratch.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="57" column="18" lean-forward="true" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
           <folding />
         </state>
       </provider>

@@ -9,7 +9,7 @@ type List interface {
 	NewInstance(id string) ListInstance
 	// Elements gets all the items on the list
 	Elements() []Item
-	// Combine pushes all the elements from the argument list to the method list.
+	// Produce a new list from the combination of two lists
 	// It will not add duplicate items (based on title)
 	Combine(List) List
 	// PushItem adds a new item to the end of the list
@@ -52,10 +52,7 @@ func (l *list) Elements() []Item {
 }
 
 func (l *list) Combine(il List) List {
-	for _, item := range il.Elements() {
-		l.Push(item)
-	}
-	return nil
+	return NewList(l.Title(), append(l.Items, il.Elements()...)...)
 }
 
 func (l *list) Push(item Item) bool {

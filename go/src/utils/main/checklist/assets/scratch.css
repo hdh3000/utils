@@ -1,0 +1,106 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/* RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    background-color: #f5f6f7;
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* LIST */
+
+.list {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08);
+    margin: 10px;
+}
+
+.list .title {
+    display: flex;
+    font-size: 1.5em;
+    background: #ddeeff;
+    padding: .5em;
+}
+
+
+/* ITEMS */
+
+.items {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    margin: .5em;
+}
+
+.item .check-box {
+    width: 1em;
+    height: 1em;
+    border: 1px solid;
+    margin-right: 1em;
+    border-radius: 10px;
+    border: 1px solid #777777;
+}
+
+.item .name {
+    font-size: 1em;
+}
+
+.item .check-box.checked {
+    background: #777777;
+}
+
+.item .name.checked {
+    text-decoration: line-through;
+}
