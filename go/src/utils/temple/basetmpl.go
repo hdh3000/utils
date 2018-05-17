@@ -1,3 +1,7 @@
+package temple
+
+// baseTmpl is the default page template rendered by NewPage
+var baseTmpl = `
 {{define "base"}}
 <!doctype html>
 <html lang="en">
@@ -28,3 +32,4 @@
     </body>
 </html>
 {{end}}
+`

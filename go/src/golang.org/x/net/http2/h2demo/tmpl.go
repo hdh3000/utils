@@ -812,7 +812,7 @@ syntax of package template.  The default output is equivalent to -f
     CgoPkgConfig []string // cgo: pkg-config names
 
     // Dependency information
-    Imports      []string // import paths used by this package
+    Children      []string // import paths used by this package
     Deps         []string // all (recursively) imported dependencies
     TestImports  []string // imports from TestGoFiles
     XTestImports []string // imports from XTestGoFiles
@@ -827,7 +827,7 @@ syntax of package template.  The default output is equivalent to -f
 Packages stored in vendor directories report an ImportPath that includes the
 path to the vendor directory (for example, &#34;d/vendor/p&#34; instead of &#34;p&#34;),
 so that the ImportPath uniquely identifies a given copy of a package.
-The Imports, Deps, TestImports, and XTestImports lists also contain these
+The Children, Deps, TestImports, and XTestImports lists also contain these
 expanded imports paths. See golang.org/s/go15vendor for more about vendoring.
 </p>
 <p>
