@@ -13,16 +13,15 @@ var (
 	flagVerticalClimbFeet                = flag.Float64("ascent", 0, "the total vertical distance you expect to ascend")
 	flagComfortableVerticalDescentFeet   = flag.Float64("descent", 0, "the total vertical distance you expect to descend (<12 deg slope)")
 	flagUnComfortableVerticalDescentFeet = flag.Float64("treacherous-descent", 0, "the total >12 def slope vertical distance you expect to descend")
-	flagErrorInBaseRate                  = flag.Float64("error", .1, "how much error to introduce into your base rate")
+	flagErrorInBaseRate                  = flag.Float64("error", .2, "how much error to introduce into your base rate")
 	flagTimeBetweenBreaks                = flag.Float64("time-between-breaks", 2, "how many hours between each break")
 	flagWillStopForLunch                 = flag.Bool("lunch", true, "will you stop for lunch?")
 )
 
 const (
-	feetInMile                               = float64(5280)
 	minutesBackPer1000ftDescent              = 10
 	minutesLostPer1000ftUncomfortableDescent = 10
-	hourOfVerticalDistance                   = 2000
+	minutesLostPer1000FtAscent               = 20 // standard naismath is 30
 	minutesPerBreak                          = 10
 )
 
@@ -33,20 +32,10 @@ func main() {
 	}
 
 	// Naismith's rule is `Allow one hour for every 3 miles (5 km) forward, plus an additional hour for every 2,000 feet (600 m) of ascent.`
-
-	// This implies a time equivalency between 3 miles (or whatever rate you are traveling at) horizontal distance, and 2000ft of vertical distance
-	// Some guy named scarf had the smart idea to look at it like this
-
-	//	equivalent distance = x + α·y
-	//  where:
-	//	x = horizontal distance
-	//	y = vertical distance
-	//	α = 7.92 (3 mi / 2000 ft)
-
-	alpha := (*flagBaseSpeedMPH * feetInMile) / hourOfVerticalDistance
+	// I have tweaked that a bit here to match me better.
 
 	horizontalTime := *flagDistanceMiles / *flagBaseSpeedMPH * float64(60)
-	verticalTime := (alpha * *flagVerticalClimbFeet / feetInMile) / *flagBaseSpeedMPH * float64(60)
+	verticalTime := (minutesLostPer1000FtAscent * (*flagVerticalClimbFeet / 1000))
 
 	naismithTime := horizontalTime + verticalTime
 
