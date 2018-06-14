@@ -5,14 +5,18 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"net/mail"
 	"os"
 	"path"
 	"reflect"
 	"utils/sendjobmail"
+
+	"golang.org/x/net/context"
+	"google.golang.org/api/gmail/v1"
 )
 
-var homeDir = os.Getenv("~")
-var configPath = path.Join(homeDir, "/Users/hdh/.config/sendjobmail/config.json")
+var homeDir = os.Getenv("HOME")
+var configPath = path.Join(homeDir, ".config/sendjobmail/config.json")
 
 type sendMailConfig struct {
 	// No pointers, makes it easy to write out an empty file with fields.
@@ -21,13 +25,14 @@ type sendMailConfig struct {
 }
 
 func main() {
+	ctx := context.Background()
 	flag.Parse()
 	config, err := ParseConfig()
 	if err != nil {
 		log.Fatalf("%s", err)
 	}
 
-	// Now parse the arguments out of the
+	// Now parse the arguments body of the
 	tmplName, toInfo, err := ParseArgs(flag.Args())
 	if err != nil {
 		log.Fatalf("%s", err)
@@ -38,12 +43,34 @@ func main() {
 		From: &config.SenderInfo,
 	}
 
-	out, err := sendjobmail.ParseTmpl(tmplName, config.TemplateDir, tmplArgs)
+	body, err := sendjobmail.ParseTmpl(tmplName, config.TemplateDir, tmplArgs)
 	if err != nil {
 		log.Fatalf("%s", err)
 	}
 
-	fmt.Println(out)
+	b, _ := json.MarshalIndent(toInfo, "", " ")
+
+	fmt.Println("I am going to send this, you sure you want to?")
+	fmt.Println("--------------------------------")
+	fmt.Println("")
+	fmt.Printf("%s\n", string(b))
+	fmt.Println("")
+	fmt.Println("--------------------------------")
+	fmt.Println(body)
+	fmt.Println("--------------------------------")
+	fmt.Println("")
+
+	gmailSvc, err := gmail.New(sendjobmail.GetClient())
+	if err != nil {
+		log.Fatalf("failed to get gmail client %s", err)
+	}
+
+	to := mail.Address{Name: "", Address: toInfo.Email}
+	from := mail.Address{Name: fmt.Sprintf("%s %s", config.SenderInfo.First, config.SenderInfo.Last), Address: config.SenderInfo.Email}
+
+	if err := sendjobmail.SendEmail(ctx, gmailSvc, &from, &to, "TEST", body); err != nil {
+		log.Fatalf("failed to send email %s", err)
+	}
 
 }
 
@@ -55,10 +82,11 @@ func ParseArgs(args []string) (string, *sendjobmail.BasicInfo, error) {
 	}
 
 	return args[0], &sendjobmail.BasicInfo{
-		First:       args[1],
-		Last:        args[2],
-		CompanyName: args[3],
-		Title:       args[4],
+		Email:       args[1],
+		First:       args[2],
+		Last:        args[3],
+		CompanyName: args[4],
+		Title:       args[5],
 	}, nil
 }
 
