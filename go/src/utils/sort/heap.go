@@ -59,6 +59,7 @@ func heapify(a []int) *heap {
 			// shift the value introduced into the heap
 			// up to the front, and re-align the heap
 			h.swap(j-1, j)
+
 		}
 
 		h.siftDown(0)
